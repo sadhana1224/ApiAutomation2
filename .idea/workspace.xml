@@ -4,18 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3478bbcf-7ce0-4d65-a511-eaa34f291127" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/endpoints/Routes.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/endpoints/UserAEndpoints.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/payload/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/tests/UserTests.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/utilities/Reports.java" afterDir="false" />
+    <list default="true" id="3478bbcf-7ce0-4d65-a511-eaa34f291127" name="Changes" comment="Api autoamtion2">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/UserTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/UserTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,7 +75,20 @@
       <option name="presentableId" value="Default" />
       <updated>1730175351489</updated>
     </task>
+    <task id="LOCAL-00001" summary="Api autoamtion2">
+      <option name="closed" value="true" />
+      <created>1730194604013</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1730194604013</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Api autoamtion2" />
+    <option name="LAST_COMMIT_MESSAGE" value="Api autoamtion2" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

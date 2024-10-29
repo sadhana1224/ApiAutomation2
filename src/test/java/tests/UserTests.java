@@ -125,19 +125,15 @@ public void testDeleteUserById()
     {
         System.out.println("Delete User");
         setTCDesc("Test to Delete User by ID");
-        int userIdToDelete = 11;
-        try {
+        int userIdToDelete = 15;
+
 
             Response response = UserAEndpoints.DeleteUser(userIdToDelete);
             Assert.assertEquals(response.getStatusCode(), 200);
 
-        }
-        catch(Exception ex)
-        {
-            Response getResponse = UserAEndpoints.ReadUser(userIdToDelete);
-            getResponse.then().log().all();
-            Assert.assertEquals(getResponse.getStatusCode(), 404, "User still exists after deletion");
-        }
+
+       // Response getResponse = UserAEndpoints.ReadUser(userIdToDelete);
+      //  Assert.assertEquals(getResponse.getStatusCode(), 404, "User should not exist after deletion");
     }
     }
 
