@@ -7,6 +7,7 @@
     <list default="true" id="3478bbcf-7ce0-4d65-a511-eaa34f291127" name="Changes" comment="Api autoamtion2">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/tests/UserTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/UserTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/utilities/Reports.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/utilities/Reports.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,7 +84,15 @@
       <option name="project" value="LOCAL" />
       <updated>1730194604013</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Api autoamtion2">
+      <option name="closed" value="true" />
+      <created>1730212181339</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1730212181339</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -100,7 +109,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/tests/UserTests.java</url>
-          <line>59</line>
+          <line>67</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>

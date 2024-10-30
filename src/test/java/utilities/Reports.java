@@ -5,6 +5,7 @@ import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
+import io.restassured.response.Response;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -120,5 +121,14 @@ public void endReport()
 		ex.printStackTrace();
 	}
 }
+	// Helper method to log response details
+	 protected static void logResponse(Response response) {
+		String responseBody = response.getBody().asPrettyString();
+		int statusCode = response.getStatusCode();
+
+		// Log response in Extent Report
+		Reports.reportStep("INFO", "Received response with status code: " + statusCode);
+		Reports.reportStep("INFO", "Response body:\n" + responseBody);
+	}
 }
 

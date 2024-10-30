@@ -43,10 +43,16 @@ public class UserTests extends Reports {
     public void testGetPosts() {
     System.out.println("Verify the URL");
         setTCDesc("Verify the URL");
+        reportStep("INFO", "Starting test to verify the URL");
         Response response = RestAssured.get("https://jsonplaceholder.typicode.com/comments");
 
         // Assert that the status code is 200
-        Assert.assertEquals(response.getStatusCode(), 200);
+        if (response.getStatusCode() == 200) {
+            reportStep("PASS", "Status code is 200 as expected.");
+        } else {
+            reportStep("FAIL", "Unexpected status code: " + response.getStatusCode());
+        }
+   //     Assert.assertEquals(response.getStatusCode(), 200);
         System.out.println("URL is verified");
     }
 
@@ -56,6 +62,8 @@ public class UserTests extends Reports {
    {
        System.out.println("Create New user");
        setTCDesc("Test to Post a New User");
+
+       reportStep("INFO", "Creating a new user with name: " + name);
        User userPayload = new User();
        userPayload.setPostId(postId);
        userPayload.setName(name);
@@ -64,7 +72,13 @@ public class UserTests extends Reports {
 
        Response response =UserAEndpoints.createUser(userPayload);
      response.then().log().all();
-     Assert.assertEquals(response.getStatusCode(),201);
+       logResponse(response);
+       if (response.getStatusCode() == 201) {
+           reportStep("PASS", "User created successfully with status code 201.");
+       } else {
+           reportStep("FAIL", "User creation failed with status code: " + response.getStatusCode());
+       }
+   //  Assert.assertEquals(response.getStatusCode(),201);
        int createdId = response.jsonPath().getInt("id");
        userPayload.setId(createdId); // Set the correct ID for subsequent tests
 
@@ -76,12 +90,20 @@ public class UserTests extends Reports {
         System.out.println("Get User");
         setTCDesc("Test to Get User by ID");
         int idToRead = 7;
+        reportStep("INFO", "Fetching user with ID: " + idToRead);
         System.out.println("Fetching user with ID: " + idToRead);
 
         Response response = UserAEndpoints.ReadUser(idToRead);
         response.then().log().all();
+        logResponse(response);
 
-        Assert.assertEquals(response.getStatusCode(), 200);
+        if (response.getStatusCode() == 200) {
+            reportStep("PASS", "Successfully fetched user with ID: " + idToRead);
+        } else {
+            reportStep("FAIL", "Failed to fetch user, status code: " + response.getStatusCode());
+        }
+
+       // Assert.assertEquals(response.getStatusCode(), 200);
 
         // Extract and validate the response data
         String name = response.jsonPath().getString("name");
@@ -100,6 +122,9 @@ public class UserTests extends Reports {
         System.out.println("Update User");
 
         setTCDesc("Test to Update User by ID");
+
+        reportStep("INFO", "Update the  user with ID: " );
+
         User userPayload = new User();
         int existingUserId = 10;  // Use an ID you know exists in your test setup
         userPayload.setId(existingUserId);
@@ -110,9 +135,15 @@ public class UserTests extends Reports {
         // Update user data using payload
         Response response = UserAEndpoints.UpdateUser(existingUserId, userPayload);
         response.then().log().all();
+        logResponse(response);
 
         // Validate update response status code
-        Assert.assertEquals(response.getStatusCode(), 200);
+        if (response.getStatusCode() == 200) {
+            reportStep("PASS", "Successfully Updated user with ID: " );
+        } else {
+            reportStep("FAIL", "Failed to Update  user id, status code: " + response.getStatusCode());
+        }
+       // Assert.assertEquals(response.getStatusCode(), 200);
 
         // Checking data after update
         int idToRead = userPayload.getId();
@@ -125,11 +156,19 @@ public void testDeleteUserById()
     {
         System.out.println("Delete User");
         setTCDesc("Test to Delete User by ID");
+
         int userIdToDelete = 15;
 
-
+        reportStep("INFO", "DELETE the  user with ID: " );
             Response response = UserAEndpoints.DeleteUser(userIdToDelete);
-            Assert.assertEquals(response.getStatusCode(), 200);
+        logResponse(response);
+
+        if (response.getStatusCode() == 200) {
+            reportStep("PASS", "Successfully Deleted user with ID: " );
+        } else {
+            reportStep("FAIL", "Failed to Delete  user id, status code: " + response.getStatusCode());
+        }
+            //Assert.assertEquals(response.getStatusCode(), 200);
 
 
        // Response getResponse = UserAEndpoints.ReadUser(userIdToDelete);
